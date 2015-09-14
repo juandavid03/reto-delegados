@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace reto
+{
+class Program
+    {
+       static void Main(string[] args)
+        {
+
+            string zona, precio;
+            int precio1;
+            Console.WriteLine("ingrese la zona");
+            zona = Console.ReadLine();
+            Console.WriteLine("cual es el precio");
+            precio = Console.ReadLine();
+            if (int.TryParse(precio, out precio1))
+            {
+                if (zona == "zona1")
+                {
+                    precio1 = precio1 * 25 / 100;
+                    Console.WriteLine("el impuesto por el producto es \n" + precio1);
+
+                }
+                if (zona == "zona2")
+                {
+                    precio1 = (precio1 * 12 / 100) + 25;
+                    Console.WriteLine("el impuesto por el producto es \n" + precio1);
+
+                }
+                if (zona == "zona3")
+                {
+                    precio1 = precio1 * 8 / 100;
+                    Console.WriteLine("el impuesto por el producto es \n" + precio1);
+
+                }
+                if (zona == "zona4")
+                {
+                    precio1 = (precio1 * 4 / 100) + 25;
+                    Console.WriteLine("el impuesto por el producto es \n" + precio1);
+
+                }
+            }
+
+            Console.ReadKey();
+
+        }
+
+
+    }
+}
