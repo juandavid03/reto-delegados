@@ -6,13 +6,93 @@ using System.Threading.Tasks;
 
 namespace reto
 { 
-    public delegate string zona(string zonas);
-    public delegate int inpuesto(int pago);
+   // public delegate string zona(string zonas);
+  //  public delegate int inpuesto(int pago);
+         
+    public class zona1 {
+    
+        public void dinero(int pagos){
+            pagos = pagos * 25 / 100;
 
-    class Program
+            Console.WriteLine("los impuestos son "+pagos);
+            
+            Console.ReadKey();
+        }
+    }
+    public class zona2
     {
 
-        public static  string zonas(string zona)
+        public void dinero(int pagos)
+        {
+            pagos = (pagos * 12 / 100) + 25;
+
+            Console.WriteLine("los impuestos son " + pagos);
+            Console.ReadKey();
+        }
+    }
+    public class zona3
+    {
+
+        public void dinero(int pagos)
+        {
+            pagos = pagos * 8 / 100;
+
+            Console.WriteLine("los impuestos son " + pagos);
+            Console.ReadKey();
+        }
+    }
+    public class zona4
+    {
+
+        public void dinero(int pagos)
+        {
+            pagos = (pagos * 4 / 100) + 25;
+
+            Console.WriteLine("los impuestos son " + pagos);
+            Console.ReadKey();
+        }
+    }
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string zona, precio;
+            int precio1;
+            Console.WriteLine("ingrese la zona");
+            zona = Console.ReadLine();
+            Console.WriteLine("cual es el precio");
+            precio = Console.ReadLine();
+            if (int.TryParse(precio, out precio1))
+            {
+                if (zona == "zona1")
+                {
+                   zona1 impuesto=new zona1();
+                    impuesto.dinero(precio1);
+
+                }
+                if (zona == "zona2")
+                {
+                    zona2 impuesto = new zona2();
+                    impuesto.dinero(precio1);
+                }
+                if (zona == "zona3")
+                {
+                    zona3 impuesto = new zona3();
+                    impuesto.dinero(precio1);
+                }
+                if (zona == "zona4")
+                {
+                    zona4 impuesto = new zona4();
+                    impuesto.dinero(precio1);
+                }
+            }
+
+            Console.ReadKey();
+
+        }
+
+       /* public static  string zonas(string zona)
         {
             if (zona == "zona1")
             {
@@ -118,7 +198,7 @@ namespace reto
         while (zone != "salir");
 
         }
-
+        */
     /*    static void Main(string[] args)
         {
             
